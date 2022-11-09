@@ -21,7 +21,7 @@ export default class Catalog extends Component {
 
   render() {
     return (
-        <div>
+        <div className='catalog-container'>
           <RentedMovies movies={this._getRentedMovies()}/>
           <UnrentedMovies movies={this._getUnrentedMovies()}/>
         </div>

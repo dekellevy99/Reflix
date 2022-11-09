@@ -1,0 +1,17 @@
+.user{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: #ecf0f1;
+}
+
+.user:hover{
+    background-color: #c3c4c4;
+}

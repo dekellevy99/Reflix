@@ -13,9 +13,9 @@ export default class Movie extends Component {
                         <img src={movie.img}/>
                         <p>{movie.title}</p>
                     </Link>
-                    {movie.isRented ? 
-                        <button>+</button> : 
-                        <button>-</button>}
+                    {movie.isRented ?
+                        <i className="fas fa-minus-circle fa-lg"></i> :
+                        <i className="fas fa-plus-circle fa-lg"></i>}
                 </div>
         )
     }
