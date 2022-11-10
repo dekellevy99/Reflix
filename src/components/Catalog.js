@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import "../styles/Catalog.css";
-import RentedMovies from "./RentedMovies";
-import UnrentedMovies from "./UnrentedMovies";
+import Movies from "./Movies";
 
 export default class Catalog extends Component {
   _filterMoviesByRentedStatus(rentedStatus) {
@@ -23,11 +21,15 @@ export default class Catalog extends Component {
   render() {
     return (
       <div className="catalog-container">
-        <RentedMovies
+        <Movies
+          key={'rented-movies'}
+          title={'Rented:'}
           movies={this._getRentedMovies()}
           toggleRented={this.props.toggleRented}
         />
-        <UnrentedMovies
+        <Movies
+          key={'unrented-movies'}
+          title={'Catalog:'}
           movies={this._getUnrentedMovies()}
           toggleRented={this.props.toggleRented}
         />

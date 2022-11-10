@@ -7,9 +7,9 @@
   font-size: 1.5em;
   font-weight: bold;
   border-radius: 10px;
-  box-shadow: 1px 1px 3px rgb(255, 255, 255);
   text-decoration: none;
   background-color: #ecf0f1;
+  color: brown;
 }
 
 .user:hover {

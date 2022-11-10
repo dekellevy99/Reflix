@@ -1,0 +1,15 @@
+.movies-container{
+  padding: 20px;
+}
+
+.movies-title{
+  color: white;
+  margin: 7px;
+}
+
+.movies{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 35px;
+}
+  
