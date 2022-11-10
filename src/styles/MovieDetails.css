@@ -1,0 +1,34 @@
+.movie-detail {
+  height: 100%;
+  background-color: black;
+  display: flex;
+  align-items: flex-start;
+  color: white;
+  padding: 50px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-detail img {
+  height: 700px;
+  width: 400px;
+  box-shadow: 1px 1px 3px #ecf0f1;
+  border-radius: 5px;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.movie-detail p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #ecf0f1;
+}
