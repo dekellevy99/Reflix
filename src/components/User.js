@@ -5,9 +5,10 @@ import '../styles/Landing.css'
 
 export default class User extends Component {
   render() {
+    let user = this.props.user
     return (
-        <Link className="user" to="catalog">
-          {this.props.user}
+        <Link className="user" to={`catalog/users/${user.id}`}>
+          {user.name}
         </Link>
     )
   }

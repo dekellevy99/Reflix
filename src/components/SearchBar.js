@@ -31,7 +31,7 @@ export default class SearchBar extends Component {
           onChange={this.handleInput}
         />
         <button onClick={this.search}>Search</button>
-        <span>Budget: 900$</span>
+        <span>Budget: {this.props.budget} $</span>
       </div>
     );
   }

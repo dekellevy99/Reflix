@@ -14,6 +14,7 @@ export default class Movies extends Component {
                     key={movie.id}
                     movie={movie}
                     toggleRented={this.props.toggleRented}
+                    isRented={this.props.isRented}
                 />
             ))}
         </div>

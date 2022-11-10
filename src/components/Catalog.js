@@ -10,8 +10,7 @@ export default class Catalog extends Component {
     };
   }
 
-  _filterMoviesBySearch() {
-    const movies = this.props.movies;
+  _filterMoviesBySearch(movies) {
     let searchBar = this.state.searchBar;
     const filteredMovies = movies.filter((movie) =>
       movie.title.toLowerCase().includes(searchBar)
@@ -20,11 +19,17 @@ export default class Catalog extends Component {
   }
 
   _getRentedMovies() {
-    return this._filterMoviesBySearch().filter((movie) => movie.isRented);
+    let rentedMovies = this.props.movies.filter(
+      (movie) => this.props.user.rentedMovies.includes(movie.id) 
+    );
+    return this._filterMoviesBySearch(rentedMovies);
   }
 
   _getUnrentedMovies() {
-    return this._filterMoviesBySearch().filter((movie) => !movie.isRented);
+    let unrentedMovies = this.props.movies.filter(
+      (movie) => !this.props.user.rentedMovies.includes(movie.id) 
+    );
+    return this._filterMoviesBySearch(unrentedMovies);
   }
 
   handleSearchBar = (searchBarValue) => {
@@ -33,29 +38,38 @@ export default class Catalog extends Component {
     });
   };
 
+  toggleRented = (movieId) => {
+    this.props.toggleRented(this.props.user.id, movieId)
+  }
+
   render() {
     let rentedMovies = this._getRentedMovies();
     let unrentedMovies = this._getUnrentedMovies();
-    console.log(rentedMovies.length);
     return (
       <div className="catalog-container">
-        <SearchBar handleSearchBar={this.handleSearchBar} />
+        <SearchBar
+          handleSearchBar={this.handleSearchBar}
+          budget={this.props.user.budget}
+        />
+
         {rentedMovies.length > 0 ? (
           <Movies
-            key={"rented-movies"}
+            key={"rented"}
             title={"Rented:"}
             movies={rentedMovies}
-            toggleRented={this.props.toggleRented}
+            toggleRented={this.toggleRented}
+            isRented={true}
           />
         ) : null}
 
         {unrentedMovies.length > 0 ? (
           <Movies
-          key={"unrented-movies"}
-          title={"Catalog:"}
-          movies={unrentedMovies}
-          toggleRented={this.props.toggleRented}
-        />
+            key={"unrented"}
+            title={"Catalog:"}
+            movies={unrentedMovies}
+            toggleRented={this.toggleRented}
+            isRented={false}
+          />
         ) : null}
       </div>
     );

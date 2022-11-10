@@ -10,7 +10,7 @@ export default class Landing extends Component {
           <p>WHO'S WATCHING?</p>
           <div className="users">
             {this.props.users.map((user) => (
-              <User user={user} key={user} />
+              <User user={user} key={user.id} />
             ))}
           </div>
         </div>

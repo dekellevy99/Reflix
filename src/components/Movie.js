@@ -19,7 +19,7 @@ export default class Movie extends Component {
         </Link>
         
         <i
-          className={`fas fa-lg ${movie.isRented ? 'fa-minus-circle' : 'fa-plus-circle'}`}
+          className={`fas fa-lg ${this.props.isRented ? 'fa-minus-circle' : 'fa-plus-circle'}`}
           onClick={this.toggleRented}
         ></i>
         
