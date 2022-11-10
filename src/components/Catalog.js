@@ -34,21 +34,29 @@ export default class Catalog extends Component {
   };
 
   render() {
+    let rentedMovies = this._getRentedMovies();
+    let unrentedMovies = this._getUnrentedMovies();
+    console.log(rentedMovies.length);
     return (
       <div className="catalog-container">
         <SearchBar handleSearchBar={this.handleSearchBar} />
-        <Movies
-          key={"rented-movies"}
-          title={"Rented:"}
-          movies={this._getRentedMovies()}
-          toggleRented={this.props.toggleRented}
-        />
-        <Movies
+        {rentedMovies.length > 0 ? (
+          <Movies
+            key={"rented-movies"}
+            title={"Rented:"}
+            movies={rentedMovies}
+            toggleRented={this.props.toggleRented}
+          />
+        ) : null}
+
+        {unrentedMovies.length > 0 ? (
+          <Movies
           key={"unrented-movies"}
           title={"Catalog:"}
-          movies={this._getUnrentedMovies()}
+          movies={unrentedMovies}
           toggleRented={this.props.toggleRented}
         />
+        ) : null}
       </div>
     );
   }

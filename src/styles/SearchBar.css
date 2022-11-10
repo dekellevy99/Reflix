@@ -1,10 +1,11 @@
-.input-container{
+.container{
     display: flex;
     grid-gap: 7px;
     margin: 0 27px;
+    position: relative;
 }
 
-.input-container > input{
+.container > input{
     width: 1000px;
     font-size: 24px;
     padding: 5px;
@@ -12,15 +13,25 @@
     border-radius: 5px;
 }
 
-.input-container > button{
+.container > button{
     width: 300px;
     border: none;
     border-radius: 5px;
-    padding: 5px;
+    padding: 15px;
     color: white;
     background-color: brown;
+    font-size: 24px;
 }
 
-.input-container > button:hover{
+.container > button:hover{
     background-color: rgb(220, 19, 19);
 }
+
+.container > span{
+    color: white;
+    position: absolute;
+    right: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+

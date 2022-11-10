@@ -1,7 +1,7 @@
 .nav-bar {
   display: flex;
   padding: 20px 0;
-  background-color: black;
+  background-color: rgba(25, 25, 25, 0.75);
   align-items: center;
   justify-content: space-between;
 }

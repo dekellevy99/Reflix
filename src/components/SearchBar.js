@@ -23,7 +23,7 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <div className="input-container">
+      <div className="container">
         <input
           value={this.state.searchBarInput}
           type={"text"}
@@ -31,6 +31,7 @@ export default class SearchBar extends Component {
           onChange={this.handleInput}
         />
         <button onClick={this.search}>Search</button>
+        <span>Budget: 900$</span>
       </div>
     );
   }

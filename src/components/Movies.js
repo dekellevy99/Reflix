@@ -7,6 +7,7 @@ export default class Movies extends Component {
     return (
       <div className="movies-container">
         <h1 className="movies-title">{this.props.title}</h1>
+        <hr/>
         <div className="movies">
             {this.props.movies.map((movie) => (
                 <Movie
@@ -16,6 +17,7 @@ export default class Movies extends Component {
                 />
             ))}
         </div>
+        
       </div>
     );
   }

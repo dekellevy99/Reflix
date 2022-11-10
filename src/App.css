@@ -3,5 +3,7 @@
 }
 
 body{
-  background-color: black;
+  /* background-color: black; */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+  url("https://i.pinimg.com/originals/95/ea/f8/95eaf8f43b75d58122081002ebf31d61.jpg");
 }
